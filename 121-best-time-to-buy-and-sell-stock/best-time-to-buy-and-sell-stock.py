@@ -6,7 +6,7 @@ class Solution(object):
         """
         buy_price = prices[0]
         max_prof = 0
-        for i in range(len(prices)):
+        for i in range(1,len(prices)):
             if buy_price > prices[i]:
                 buy_price = prices[i]
 
