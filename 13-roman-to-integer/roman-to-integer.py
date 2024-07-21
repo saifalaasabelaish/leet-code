@@ -21,8 +21,8 @@ class Solution(object):
                 result -= roman_numbers[s[i]]
             else:
                 result += roman_numbers[s[i]]
-        result+=roman_numbers[s[-1]] 
-        return result            
+        
+        return result+roman_numbers[s[-1]]           
 
         
         
