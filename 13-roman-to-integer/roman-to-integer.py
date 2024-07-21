@@ -14,15 +14,16 @@ class Solution(object):
         'M': 1000
     }
         result=0
+        length = len(s)
         i=0
-        output = 0
-        for i in range(len(s)-1):
-            if roman_numbers[s[i]] < roman_numbers[s[i+1]]:
-                result -= roman_numbers[s[i]]
-            else:
-                result += roman_numbers[s[i]]
-        
-        return result+roman_numbers[s[-1]]           
+        while i < length:
+            if i + 1 < length and roman_numbers[s[i]] < roman_numbers[s[i + 1]]:
+                result+=roman_numbers[s[i+1]]-roman_numbers[s[i]]
+                i+=2
+            else :
+                result+=roman_numbers[s[i]]
+                i+=1
+        return result            
 
         
         
