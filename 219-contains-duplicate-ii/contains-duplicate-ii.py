@@ -8,8 +8,7 @@ class Solution(object):
 
         numbers_set=set()
         start=0
-        length=len(nums)
-        for i in range(length):
+        for i in range(len(nums)):
             if i-start>k:
                 numbers_set.remove(nums[start])
                 start+=1
