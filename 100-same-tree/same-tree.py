@@ -19,7 +19,9 @@ class Solution(object):
         if p.val !=q.val:
             return False
 
-        return self.isSameTree(p.right,q.right) and self.isSameTree(p.left,q.left)
+        right= self.isSameTree(p.right,q.right)
+        left=self.isSameTree(p.left,q.left)
+        return right and left
         
 
         
