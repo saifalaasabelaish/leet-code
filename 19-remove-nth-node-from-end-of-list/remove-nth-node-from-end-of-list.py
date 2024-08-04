@@ -11,7 +11,7 @@ class Solution(object):
         :rtype: ListNode
         """
         if not head:
-            return head 
+            return head
         dummy = ListNode(0)
         dummy.next = head
         tracker = dummy
