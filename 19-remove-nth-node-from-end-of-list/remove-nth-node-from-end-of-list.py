@@ -10,8 +10,7 @@ class Solution(object):
         :type n: int
         :rtype: ListNode
         """
-        if not head:
-            return head
+
         dummy = ListNode(0)
         dummy.next = head
         tracker = dummy
