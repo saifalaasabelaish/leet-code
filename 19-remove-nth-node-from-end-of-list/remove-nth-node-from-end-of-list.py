@@ -12,7 +12,8 @@ class Solution(object):
         """
         if not head:
             return head
-            
+        if not head.next:
+            return None    
         dummy = ListNode(0)
         dummy.next = head
         tracker = dummy
