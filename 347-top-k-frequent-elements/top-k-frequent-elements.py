@@ -5,7 +5,7 @@ class Solution:
         frequencies = list(count_map.values())
         frequencies.sort(reverse=True)
         
-        top_k_frequencies = frequencies[:k]
+        top_k_frequencies = frequencies[0:k]
         
         result = []
         for i, j in count_map.items():
