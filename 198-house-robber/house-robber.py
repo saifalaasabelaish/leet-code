@@ -1,8 +1,6 @@
 class Solution(object):
     def rob(self, nums):
-        if not nums :
-            return 0
-            
+        
         n=len(nums)
         dp=[0] * (n+1)
         if n==0:
