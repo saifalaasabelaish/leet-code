@@ -1,6 +1,6 @@
 class Solution(object):
     def combinationSum4(self, nums, target):
-        if not nums :
+        if not nums or all(num > target for num in nums):
             return 0
         dp = [0] * (target+1)
         dp[0] = 1
