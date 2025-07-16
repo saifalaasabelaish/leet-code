@@ -7,7 +7,7 @@ class Solution(object):
         """
         for i in range(len(nums)):
             sum=nums[i]
-            for j in range(len(nums)):
-                if (sum+nums[j]==target and i!=j):
+            for j in range(i+1 , len(nums)):
+                if (sum+nums[j]==target):
                     return [i,j]
           
