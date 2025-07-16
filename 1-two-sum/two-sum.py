@@ -1,8 +1,13 @@
 class Solution(object):
     def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
         for i in range(len(nums)):
-            complement = target - nums[i]
-            if complement in nums:  
-                complement_index = nums.index(complement)
-                if complement_index != i:
-                    return [i, complement_index]
+            sum=nums[i]
+            for j in range(len(nums)):
+                if (sum+nums[j]==target and i!=j):
+                    return [i,j]
+          
