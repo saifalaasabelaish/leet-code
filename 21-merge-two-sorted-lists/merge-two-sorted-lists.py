@@ -10,26 +10,16 @@ class Solution(object):
         :type list2: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
-        temp = ListNode()
-        current = temp
-
-        while list1 and list2:
-            
-            if list1.val < list2.val:
-                current.next = list1
-                current = list1
-                list1 = list1.next
+        new_list=ListNode()
+        current=new_list
+        while list1 and list2 :
+            if list1.val<list2.val:
+                current.next=list1
+                list1=list1.next
             else:
-                current.next = list2
-                current = list2
-                list2 = list2.next
-
-        if list1:
-            current.next = list1
-        else :
-             current.next = list2
-
-        return temp.next
-
-
+                current.next=list2
+                list2=list2.next
+            current=current.next
+        current.next=list1 or list2
+        return new_list.next            
         
