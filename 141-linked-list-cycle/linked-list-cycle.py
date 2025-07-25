@@ -10,16 +10,12 @@ class Solution(object):
         :type head: ListNode
         :rtype: bool
         """
-        if not head:
-            return False
-
-        if not head.next :
-            return False    
-        visited = set()
-        temp = head
-        while temp:
-            if temp.next and temp.next in visited:
+        fast=head
+        slow=head
+        while fast and fast.next:
+            fast=fast.next.next
+            slow=slow.next
+            if slow==fast:
                 return True
-            visited.add(temp)
-            temp = temp.next
-        return False
+        return False        
+            
