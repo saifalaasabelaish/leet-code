@@ -5,9 +5,10 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
+        hash_map={}
         for i in range(len(nums)):
-            sum=nums[i]
-            for j in range(i+1 , len(nums)):
-                if (sum+nums[j]==target):
-                    return [i,j]
-          
+            sum=target-nums[i]            
+            if sum  in hash_map:
+                return [hash_map[sum],i]      
+            else :
+                hash_map[nums[i]]=i
