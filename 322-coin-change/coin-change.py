@@ -1,22 +1,11 @@
 class Solution(object):
     def coinChange(self, coins, amount):
-        memo = {}
+        dp = [amount + 1] * (amount + 1)  
+        dp[0] = 0
 
-        def dfs(rem):
-            if rem == 0:
-                return 0
-            if rem < 0:
-                return float('inf')
-            
-            if rem in memo:
-                return memo[rem]
-
-            ans = float('inf')
+        for i in range(1, amount + 1):
             for coin in coins:
-                ans = min(ans, 1 + dfs(rem - coin))
+                if i - coin >= 0:
+                    dp[i] = min(dp[i], 1 + dp[i - coin])
 
-            memo[rem] = ans
-            return ans
-
-        result = dfs(amount)
-        return result if result != float('inf') else -1
+        return dp[amount] if dp[amount] != amount + 1 else -1
